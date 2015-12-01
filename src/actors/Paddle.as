@@ -11,7 +11,7 @@ package actors
 		
 		public function Paddle() 
 		{
-			addChild(new PaddleArt());
+			addChild(new GuldanArt ());
 		}
 		
 	}

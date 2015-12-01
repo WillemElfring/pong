@@ -10,6 +10,7 @@ package actors
 	{
 		private var controller:Controller;
 		private var speed:Number = 0;
+		private var maxSpeed:Number = 15;
 		
 		public function Player() 
 		{
@@ -19,17 +20,18 @@ package actors
 		{
 			this.removeEventListener(Event.ADDED_TO_STAGE, init);
 			controller = new Controller(stage);
-			this.addEventListener(Event.ENTER_FRAME, loop);			
+			this.addEventListener(Event.ENTER_FRAME, loop);	
+			addChild(new KhadgarArt());
 		}
 		private function loop(e:Event):void 
 		{
 			if (controller.up)
 			{
-				speed = -15;
+				speed = -maxSpeed;
 			}
 			else if(controller.down)
 			{
-				speed = 15;
+				speed = maxSpeed;
 			}else
 			{
 				if (speed > 0) speed--;
