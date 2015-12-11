@@ -1,6 +1,6 @@
-package actors 
+package actors
 {
-	import utils.Controller;	
+import utils.Controller;	
 	import flash.events.Event;
 	/**
 	 * ...
@@ -23,6 +23,17 @@ package actors
 			this.addEventListener(Event.ENTER_FRAME, loop);	
 			addChild(new KhadgarArt());
 		}
+		public function set speedController(nietHoger:Number):void {
+                        if (nietHoger > 30) {
+                                trace ("Je kunt niet boven de 30 speed komen");
+                                nietHoger = 30;
+                        }
+                        speed = nietHoger;
+                }
+                public function get speedRestriction():Number {
+                        return speed;
+                        
+                        }
 		private function loop(e:Event):void 
 		{
 			if (controller.up)
@@ -47,5 +58,4 @@ package actors
 		}
 		
 	}
-
 }

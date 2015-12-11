@@ -77,6 +77,7 @@ package actors
 			{
 				dispatchEvent(new Event(Ball.OUTSIDE_LEFT));
 			}
+			
 		}
 		public function destroy():void
 		{
